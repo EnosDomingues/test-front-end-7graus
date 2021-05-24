@@ -1,7 +1,7 @@
 import { Flex, Box, Grid, Text, Button } from "@chakra-ui/react";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { UserInfo } from "../components/UserInfo";
+import { RandomPerson } from "../components/RandomPerson";
 import api from "../services/api";
 
 type User = {
@@ -17,8 +17,6 @@ type User = {
   }
   picture: {
     large: string;
-    medium: string;
-    thumbnail: string;
   };
   email: string;
   phone: string;
@@ -56,7 +54,7 @@ export default function Home() {
           maxW="1440px"
         >
           {users.map(user => (
-            <UserInfo user={user} key={user.login?.uuid}/>
+            <RandomPerson user={user} key={user.login?.uuid}/>
           ))}
         </Grid>
         <Box>

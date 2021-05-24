@@ -14,18 +14,16 @@ type User = {
   }
   picture: {
     large: string;
-    medium: string;
-    thumbnail: string;
   };
   email: string;
   phone: string;
 }
 
-type UserInfoProps = {
+type RandomPersonProps = {
   user: User;
 }
 
-export function UserInfo({ user }: UserInfoProps) {
+export function RandomPerson({ user }: RandomPersonProps) {
   return (
     <Flex
       key={user.login.uuid}
