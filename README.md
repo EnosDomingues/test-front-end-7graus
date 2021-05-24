@@ -21,10 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [Jest](https://jestjs.io/)
 - [Typescript](https://www.typescriptlang.org/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Components
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**RandomPerson:** Component responsible for displaying a random person that will be fetched via the REST API.
+**PersonInfo:** Component that has been reused to display each person's contact information within the RandomPerson component.
