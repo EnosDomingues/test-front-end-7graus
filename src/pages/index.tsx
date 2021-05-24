@@ -26,6 +26,7 @@ type User = {
 
 export default function Home() {
   const [users, setUsers] = useState<User[]>([])
+  const [isLoading, setisLoading] = useState(false)
 
   useEffect(() => {
     api.get('/?results=10')
@@ -35,8 +36,11 @@ export default function Home() {
   }, [])
 
   async function handleLoadMoreUsers() {
+    setisLoading(true)
     const { data } = await api.get('/?results=10');
+    await new Promise(resolve => setTimeout(resolve, 2000)).then()
     setUsers([...users, ...data.results])
+    setisLoading(false)
   }
 
   return (
@@ -66,6 +70,8 @@ export default function Home() {
             _hover={{
               bg: 'gray.500'
             }}
+            isLoading={isLoading}
+            loadingText="Loading"
             onClick={() => handleLoadMoreUsers()}
           >
             Load more 10 users
