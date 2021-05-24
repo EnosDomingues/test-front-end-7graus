@@ -1,5 +1,5 @@
 import { Flex, Image, Text, Badge } from "@chakra-ui/react";
-import { UserContactinfo } from "./UserContactInfo";
+import { PersonInfo } from "./PersonInfo";
 
 type User = {
   login: {
@@ -63,8 +63,8 @@ export function RandomPerson({ user }: RandomPersonProps) {
       >
         {user.location.country}
       </Badge>
-      <UserContactinfo label="Email" content={user.email}/>
-      <UserContactinfo label="Phone" content={user.phone}/>
+      <PersonInfo label="Email" content={user.email}/>
+      <PersonInfo label="Phone" content={user.phone}/>
     </Flex>
   )
 }

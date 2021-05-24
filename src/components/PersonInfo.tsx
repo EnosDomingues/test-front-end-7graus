@@ -1,11 +1,11 @@
 import { Box, Text } from "@chakra-ui/react";
 
-type UserContactinfoProps = {
+type PersonInfoProps = {
   label: string;
   content: string;
 }
 
-export function UserContactinfo({ label, content }: UserContactinfoProps) {
+export function PersonInfo({ label, content }: PersonInfoProps) {
   return (
     <Box
     border="2px"
