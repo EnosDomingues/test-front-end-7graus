@@ -1,4 +1,4 @@
-import { Flex, Box, Grid, Button } from "@chakra-ui/react";
+import { Flex, Box, Grid, Text, Button } from "@chakra-ui/react";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import { UserInfo } from "../components/UserInfo";
@@ -60,23 +60,28 @@ export default function Home() {
           ))}
         </Grid>
         <Box>
-          <Button
-            colorScheme="blackAlpha"
-            h="16"
-            maxW="200px"
-            bg="gray.600"
-            mb="10"
-            mt="10"
-            _hover={{
-              bg: 'gray.500'
-            }}
-            isLoading={isLoading}
-            loadingText="Loading"
-            onClick={() => handleLoadMoreUsers()}
-          >
-            Load more 10 users
-          </Button>
+          {users.length > 0 && (
+            <Button
+              colorScheme="blackAlpha"
+              h="16"
+              maxW="200px"
+              bg="gray.600"
+              mb="10"
+              mt="10"
+              _hover={{
+                bg: 'gray.500'
+              }}
+              isLoading={isLoading}
+              loadingText="Loading"
+              onClick={() => handleLoadMoreUsers()}
+            >
+              Load more 10 users
+            </Button>
+          )}
         </Box>
+        <Flex align="center" justify="center" w="100%">
+          <Text color="gray.400">Proudly made in 🇧🇷 by Enos Domingues</Text>
+        </Flex>
       </Flex>
     </> 
   )
